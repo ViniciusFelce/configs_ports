@@ -1,14 +1,3 @@
 server: 
   port: 8080
-spring:
-  cloud:
-    gateway:
-      routes:
-        - id: subscriptionRoute
-          uri: http://localhost:8086
-          predicates:
-            - path=/subscription/**
-        - id: courseRoute
-          uri: lb://COURSE-SERVICE
-          predicates:
-            - path=/course/**
+
