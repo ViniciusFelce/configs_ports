@@ -7,7 +7,7 @@ spring:
         - id: subscriptionRoute
           uri: http://localhost:8086
           predicates:
-            - path-/subscription/**
+            - path=/subscription/**
         - id: courseRoute
           uri: lb://COURSE-SERVICE
           predicates:
