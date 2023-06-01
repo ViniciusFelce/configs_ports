@@ -4,14 +4,14 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: catalogRoute
-          uri: lb://CATALOG-SERVICE
-          predicates:
-            - Path=/catalog/**
         - id: movieRoute
           uri: lb://MOVIE-SERVICE
           predicates:
             - Path=/movie/**
+        - id: catalogRoute
+          uri: lb://CATALOG-SERVICE
+          predicates:
+            - Path=/catalog/**
           filters:
-            - AddRequestHeader=movie-request-header, custom-movie-request-header
-            - AddResponseHeader=movie-response-header, custom-movie-response-header
+            - AddRequestHeader=catalog-request-header, custom-catalog-request-header
+            - AddResponseHeader=catalog-response-header, custom-catalog-response-header
